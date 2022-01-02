@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root{
+    --my-font:'Rubik', sans-serif;
+    --user-color: hsl(246, 80%, 60%);
+    --bg-color:hsl(226, 43%, 10%);
+    --font-color:hsl(235, 45%, 61%);
+    --font-color-hover: hsl(236, 100%, 87);
+    --card-color:hsl(235, 46%, 20%);
+    --border-radi: 20px;
+}
+
+body{
+    background: var(--bg-color);
+}
+/*--main-component sizing--*/
+.main-component{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 5%;
+}
+
+/*--user info--*/
+.user{
+    background:var(--card-color) ;
+    border-radius: var(--border-radi)
+}
+
+.user-info{
+    background: var(--user-color);
+    padding: 1rem ;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    font-family: var(--my-font);
+}
+
+.user-info img{
+    height: 80px;
+    grid-column-start: 1/ span 2;
+    border: 2px solid white;
+    border-radius: 50px;
+}
+
+.user-info h1{
+    font-size: 28px;
+    margin-top: 3px;
+    font-weight: 300;
+    color: white;
+}
+
+.user .user-info p{
+    margin-bottom: 0;
+    color: var(--font-color);
+}
+
+/*--options for user--*/
+.user-options{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
+.user-options p{
+    font-family: var(--my-font);
+    color: var(--font-color);
+    font-size: 20px;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+
+/*--styling for all the overall time cards--*/
+.work-info, .play-info, .study-info, .exercise-info, .social-info, .self-care-info{
+    margin-top: 3rem ;
+    padding: 1.5rem;
+    background: var(--card-color);
+    border-radius: 20px;
+    font-family: var(--my-font);
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.work-info h2, .play-info h2, .study-info h2, .exercise-info h2, .social-info h2, .self-care-info h2{
+    font-weight: 500;
+    color: white;
+    grid-column: 1/ span 2;
+    font-size: 30px;
+    margin: 5px;
+}
+
+.work-info p, .play-info p, .study-info p, .exercise-info p, .social-info p, .self-care-info p{
+    font-size: 40px;
+    margin: 5px;
+    color: white;
+    font-weight: 300;
+}
+
+.work-info span, .play-info span, .study-info span, .exercise-info span, .social-info span, .self-care-info span{
+    font-size: 20px;
+    color: white;
+    margin: 5px;
+}
+
+/*--specific styling for each card--*/
+.work {
+    background: hsl(15, 100%, 70%);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.play{
+    background: hsl(195, 74%, 62%);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.study{
+    background: hsl(348, 100%, 68%);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.exercise{
+    background:  hsl(145, 58%, 55%);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.social{
+    background:  hsl(264, 64%, 52%);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.self-care{
+    background: hsl(43, 84%, 65%);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.work img, .study img, .play img, .exercise img, .self-care img, .social img{
+    position: absolute;
+    z-index: -1;
+    left: 78%;
+} 
+
+.work, .study , .play , .exercise , .self-care , .social{
+    position: relative;
+    cursor: pointer;
+}
+
+/*--hover options for options--*/
+.user-options p:hover{
+    color: white;
+}
+
+.work-info:hover, .play-info:hover, .study-info:hover, .exercise-info:hover, .social-info:hover, .self-care-info:hover{
+    background:hsl(236, 33%, 30%);
+}
+
+/*--media queries for desktop view--*/
+@media screen and (min-width: 600px) {
+    body{
+        padding: 10%;
+    }
+    .main-component{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1.5rem;
+        margin:  10% auto;
+    }
+
+    .user{
+        grid-row: 1/ span 2;
+    }
+
+    .user-info{
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
+
+    .user-options{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin: 1rem;
+    }
+
+    .work-info, .play-info, .study-info, .exercise-info, .social-info, .self-care-info{
+        margin-top: 3rem ;
+        padding: 1.5rem;
+        background: var(--card-color);
+        border-radius: 20px;
+        font-family: var(--my-font);
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
+
+    .work-info h2, .play-info h2, .study-info h2, .exercise-info h2, .social-info h2, .self-care-info h2{
+        font-weight: 500;
+        color: white;
+        grid-column: 1;
+        font-size: 30px;
+        margin: 5px;
+    }
+
+    .work img, .study img, .play img, .exercise img, .self-care img, .social img{
+        position: absolute;
+        z-index: -1;
+        left: 60%;
+    } 
+    
+}
